@@ -1,0 +1,7 @@
+<h1>{{title}}</h1>
+<nav>
+    <a [routerLink]="dashboardRoute">Dashboard</a>
+    <a [routerLink]="userRoute">Users</a>
+    <a [routerLink]="groupsRoute">Groups</a>
+</nav>
+<router-outlet [routes]="routes"></router-outlet>
