@@ -1,5 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
+import 'package:poc_angulardart_subapps/src/child_application.dart';
 
 import '../routes.dart' as route;
 
@@ -26,7 +27,7 @@ import '../src/components/user_create_component/user_create_component.template.d
     routerProviders,
   ],
 )
-class UserAppComponent {
+class UserAppComponent extends ChildApplication {
   String createRoute = route.userCreateRoute.toUrl();
   String listRoute = route.userListRoute.toUrl();
 
@@ -41,4 +42,7 @@ class UserAppComponent {
       component: create.UserCreateComponentNgFactory,
     ),
   ];
+
+  UserAppComponent(@Inject(APP_BASE_HREF) String baseUri, Router router)
+      : super('users', baseUri, router);
 }

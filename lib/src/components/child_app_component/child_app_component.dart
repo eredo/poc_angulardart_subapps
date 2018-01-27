@@ -29,6 +29,7 @@ class ChildAppComponent implements OnActivate, CanReuse {
     }
 
     _activeApp.style.display = 'block';
+    window.postMessage({'application': appName, 'path': current.path}, '*');
   }
 
   @override
