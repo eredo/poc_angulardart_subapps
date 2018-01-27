@@ -17,6 +17,8 @@ dev_dependencies:
   browser: ^0.10.0
   dart_to_js_script_rewriter: ^1.0.1
   test: any
+  shelf: any
+  shelf_proxy: any
 
 dependency_overrides:
   analyzer: ^0.31.0-alpha
@@ -26,6 +28,7 @@ transformers:
     entry_points:
     - web/main.dart
     - web/users/main.dart
+    - web/groups/main.dart
     - test/**_test.dart
 - dart_to_js_script_rewriter
 - $dart2js:
@@ -33,6 +36,7 @@ transformers:
       - --trust-type-annotations
       - --trust-primitives
       - --dump-info
+    minify: true
     environment:
       requirejs: 'false'
 - test/pub_serve:
