@@ -8,6 +8,11 @@ final RoutePath dashboardRoute = new RoutePath(
   path: 'dashboard',
 );
 
+
+final RoutePath stackTraceRoute = new RoutePath(
+  path: 'stack-trace',
+);
+
 final RoutePath groupsRoute = new RoutePath(
   path: 'groups',
 );

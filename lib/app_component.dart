@@ -13,6 +13,10 @@ import 'src/components/dashboard_component/dashboard_component.template.dart'
 import 'src/components/child_app_component/child_app_component.template.dart'
     as child;
 
+// ignore: uri_has_not_been_generated
+import 'src/components/stack_trace_component/stack_trace_component.template.dart'
+  as stack_trace;
+
 @Component(
   selector: 'hack-app',
   templateUrl: 'app_component.html',
@@ -32,6 +36,7 @@ class AppComponent {
   String title = 'Sub Application Example';
 
   String dashboardRoute = route.dashboardRoute.toUrl();
+  String stackTraceRoute = route.stackTraceRoute.toUrl();
   String userRoute = route.userRoute.toUrl();
   String groupsRoute = route.groupsRoute.toUrl();
 
@@ -40,6 +45,10 @@ class AppComponent {
       routePath: route.dashboardRoute,
       component: dashboard.DashboardComponentNgFactory,
       useAsDefault: true,
+    ),
+    new RouteDefinition(
+      routePath: route.stackTraceRoute,
+      component: stack_trace.StackTraceComponentNgFactory,
     ),
     new RouteDefinition(
       path: route.userRoute.path + '(/.*)?',
