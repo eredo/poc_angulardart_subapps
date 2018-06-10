@@ -1,14 +1,14 @@
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
-import 'package:poc_angulardart_subapps/src/child_application.dart';
+import 'package:shared_lib/child_application.dart';
 
-import '../routes.dart' as route;
+import 'routes.dart' as route;
 
 // ignore: uri_has_not_been_generated
-import '../src/components/user_list_component/user_list_component.template.dart'
+import 'src/user_list_component/user_list_component.template.dart'
     as list;
 // ignore: uri_has_not_been_generated
-import '../src/components/user_create_component/user_create_component.template.dart'
+import 'src/user_create_component/user_create_component.template.dart'
     as create;
 
 @Component(
@@ -23,7 +23,7 @@ import '../src/components/user_create_component/user_create_component.template.d
     RouterLink,
   ],
   providers: const [
-    const Provider(APP_BASE_HREF, useValue: '/users/'),
+    const Provider(appBaseHref, useValue: '/users/'),
     routerProviders,
   ],
 )
@@ -43,6 +43,6 @@ class UserAppComponent extends ChildApplication {
     ),
   ];
 
-  UserAppComponent(@Inject(APP_BASE_HREF) String baseUri, Router router)
+  UserAppComponent(@Inject(appBaseHref) String baseUri, Router router)
       : super('users', baseUri, router);
 }

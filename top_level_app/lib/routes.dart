@@ -17,20 +17,12 @@ final RoutePath groupsRoute = new RoutePath(
   path: 'groups',
 );
 
-final RoutePath userListRoute = new RoutePath(
-  path: 'list',
-);
-
-final RoutePath userCreateRoute = new RoutePath(
-  path: 'create',
-);
-
 final RoutePath userListRouteExternal = new RoutePath(
-  path: userListRoute.path,
+  path: 'list',
   parent: userRoute,
 );
 
 final RoutePath userCreateRouteExternal = new RoutePath(
-  path: userCreateRoute.path,
+  path: 'group',
   parent: userRoute,
 );

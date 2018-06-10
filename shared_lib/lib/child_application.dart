@@ -2,12 +2,13 @@ import 'dart:html' show window;
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 
+/// Handles navigation changes for child application.
 abstract class ChildApplication implements OnInit {
   final String baseUri;
   final Router router;
   final String name;
 
-  ChildApplication(this.name, @Inject(APP_BASE_HREF) this.baseUri, this.router);
+  ChildApplication(this.name, @Inject(appBaseHref) this.baseUri, this.router);
 
   @override
   void ngOnInit() {

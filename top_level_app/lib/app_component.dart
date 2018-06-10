@@ -10,7 +10,7 @@ import 'routes.dart' as route;
 import 'src/components/dashboard_component/dashboard_component.template.dart'
     as dashboard;
 // ignore: uri_has_not_been_generated
-import 'src/components/child_app_component/child_app_component.template.dart'
+import 'package:shared_lib/child_app_component.template.dart'
     as child;
 
 // ignore: uri_has_not_been_generated
@@ -25,7 +25,7 @@ import 'src/components/stack_trace_component/stack_trace_component.template.dart
     RouterLink,
   ],
   providers: const [
-    const Provider(APP_BASE_HREF, useValue: '/'),
+    const Provider(appBaseHref, useValue: '/'),
     routerProviders,
     materialProviders,
   ],
